@@ -13,8 +13,8 @@ class Net(nn.Module):
 		self.conv1 = nn.Conv2d(1, 20, 5, 1)
 		self.conv2 = nn.Conv2d(20, 50, 5, 1)
 		self.fc1 = nn.Linear(4*4*50, 500)
-		self.fc2 = nn.Linear(500, 1500)
-		self.fc3 = nn.Linear(1500, 500)
+		self.fc2 = nn.Linear(500, 500)
+		self.fc3 = nn.Linear(500, 500)
 		self.fc4 = nn.Linear(500, 10)
 
 	def forward(self, x):
@@ -80,16 +80,16 @@ def main():
 						help='random seed (default: 1)')
 	parser.add_argument('--log-interval', type=int, default=10, metavar='N',
 						help='how many batches to wait before logging training status')
-	
-	parser.add_argument('--save-model', action='store_true', default=True,
+	parser.add_argument('--save-model', action='store_true', default=False,
 						help='For Saving the current Model')
+
 	args = parser.parse_args()
 	use_cuda = not args.no_cuda and torch.cuda.is_available()
 
 	torch.manual_seed(args.seed)
 
 	device = torch.device("cuda" if use_cuda else "cpu")
-	print(device)
+	print("device: ",device)
 	kwargs = {'num_workers': 1, 'pin_memory': True} if use_cuda else {}
 	train_loader = torch.utils.data.DataLoader(
 		datasets.MNIST('./mnist', train=True, download=True,

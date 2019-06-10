@@ -9,10 +9,18 @@
 
 ## 使用方法
 
-1. 在系统中安装Python解释器和必要的Python库（我用的是centos7）
+1. 在操作系统中安装Python解释器和必要的Python库（我用的是centos7）
 
 2. 运行shell脚本
 
 ```bash
 bash run.sh
 ```
+
+## 参考
+
+1. [MNIST_handwriting_recognition_by_SKlearn_KNN](https://github.com/danielshaving/MNIST_handwriting_recognition_by_SKlearn_KNN)
+
+## 注意
+
+用于KNN没有使用CUDA进行加速计算，因此KNN使用的mnist数据量比CNN算法中使用的数据量少
