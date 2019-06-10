@@ -1,6 +1,6 @@
 # BUPT Pattern Recognition Assignment
 
-2种mnist分类器
+3种mnist分类器
 
 ## 分类器算法
 
@@ -24,4 +24,4 @@ bash run.sh
 
 ## 注意
 
-由于KNN没有使用CUDA进行计算，为了减少电脑的计算时间，加快运行速度，KNN代码中使用的mnist数据量比CNN代码中使用的数据量少
+由于KNN没有使用CUDA进行计算，为了减少电脑的计算时间，加快运行速度，KNN代码中使用的mnist数据量比CNN和MLP代码中使用的数据量少

@@ -3,9 +3,9 @@
 
 for model in mlp cnn knn
 do
-    echo ####################
+    echo "####################"
     echo $model
-    echo ####################
+    echo "####################"
     python -u ${model}-mnist.py
     echo
 done
