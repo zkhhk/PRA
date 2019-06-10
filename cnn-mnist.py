@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
-import t3nsor as t3
+import os
 
 class Net(nn.Module):
 	def __init__(self):
@@ -13,9 +13,7 @@ class Net(nn.Module):
 		self.conv1 = nn.Conv2d(1, 20, 5, 1)
 		self.conv2 = nn.Conv2d(20, 50, 5, 1)
 		self.fc1 = nn.Linear(4*4*50, 500)
-		self.fc2 = nn.Linear(500, 500)
-		self.fc3 = nn.Linear(500, 500)
-		self.fc4 = nn.Linear(500, 10)
+		self.fc2 = nn.Linear(500, 10)
 
 	def forward(self, x):
 		x = F.relu(self.conv1(x))
@@ -24,9 +22,7 @@ class Net(nn.Module):
 		x = F.max_pool2d(x, 2, 2)
 		x = x.view(-1, 4*4*50)
 		x = F.relu(self.fc1(x))
-		x = F.relu(self.fc2(x))
-		x = F.relu(self.fc3(x))
-		x = self.fc4(x)
+		x = self.fc2(x)
 		return F.log_softmax(x, dim=1)
 	
 def train(args, model, device, train_loader, optimizer, epoch):
@@ -115,6 +111,8 @@ def main():
 		test(args, model, device, test_loader)
 
 	if (args.save_model):
+		if os.path.exists("model") == False:
+			os.mkdir("model")
 		torch.save(model.state_dict(),"model/cnn.pt")
 		
 if __name__ == '__main__':

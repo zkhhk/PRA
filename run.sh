@@ -1,9 +1,12 @@
 #!/bin/bash
 # zyzisyz
 
-for model in cnn knn
+for model in mlp cnn knn
 do
+    echo ####################
+    echo $model
+    echo ####################
     python -u ${model}-mnist.py
-    wait
+    echo
 done
 

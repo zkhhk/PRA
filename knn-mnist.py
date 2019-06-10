@@ -80,17 +80,15 @@ for i in np.random.randint(0, high=len(testLabels), size=(24,)):
     plt.imshow(image0,cmap='gray')
     plt.axis('off')
 
-
         # convert the image for a 64-dim array to an 8 x 8 image compatible with OpenCV,
         # then resize it to 32 x 32 pixels for better visualization
-
         #image0 = imutils.resize(image[0], width=32, inter=cv2.INTER_CUBIC)
 
     j = j+1
 
     # show the prediction
-    print("I think that digit is: {}".format(prediction))
-    print('image0 is ',image0)
+    # print("I think that digit is: {}".format(prediction))
+    # print('image0 is ',image0)
     # cv2.imshow("Image", image0)
     # cv2.waitKey(0) # press enter to view each one!
 plt.show()

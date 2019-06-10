@@ -4,8 +4,9 @@
 
 ## 分类器算法
 
-1. `cnn-mnist.py`采用pytorch实现卷积神经网络（CNN）进行分类
-2. `knn-mnist.py`采用sklearn实现K最邻近方法（KNN）进行分类
+1. `mlp-mnist.py`采用pytorch实现多层感知机（MPL）进行分类
+2. `cnn-mnist.py`采用pytorch实现卷积神经网络（CNN）进行分类
+3. `knn-mnist.py`采用sklearn实现K最邻近方法（KNN）进行分类
 
 ## 使用方法
 
